@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.Optional;
 import org.sandbox.collection.cache.DoubleLinkedList.Node;
 
-public final class LruCache<K, V> {
+public final class LruCache<K, V> implements Cache<K, V> {
 
     private final int capacity;
     private final Map<K, Node<K, V>> cache; // Enables item access
