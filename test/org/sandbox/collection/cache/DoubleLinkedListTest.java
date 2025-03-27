@@ -7,8 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.math.BigDecimal;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.sandbox.collection.cache.LruCache.DoubleLinkedList;
-import org.sandbox.collection.cache.LruCache.Node;
+import org.sandbox.collection.cache.DoubleLinkedList.Node;
 
 class DoubleLinkedListTest {
 
