@@ -1,6 +1,6 @@
 package org.sandbox.collection.cache;
 
-public class DoubleLinkedList<K, V> {
+class DoubleLinkedList<K, V> {
 
     private Node<K, V> head;
     private Node<K, V> tail;
