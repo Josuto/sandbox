@@ -24,7 +24,7 @@ class LruCacheTest {
 
     @Test
     void givenOneItemSizeEmptyCache_whenGetItem_shouldReturnNull() {
-        LruCache<String, BigDecimal> cache = new LruCache<String, BigDecimal>(1);
+        Cache<String, BigDecimal> cache = new LruCache<String, BigDecimal>(1);
 
         Optional<BigDecimal> item = cache.get("Apple");
 
@@ -33,7 +33,7 @@ class LruCacheTest {
 
     @Test
     void givenOneItemSizeEmptyCache_whenPutFirstItem_shouldAddItem() {
-        LruCache<String, BigDecimal> cache = new LruCache<String, BigDecimal>(1);
+        Cache<String, BigDecimal> cache = new LruCache<String, BigDecimal>(1);
 
         cache.put("Apple", BigDecimal.valueOf(2.5));
 
@@ -43,7 +43,7 @@ class LruCacheTest {
 
     @Test
     void givenOneItemSizeCacheWithOneItem_whenPutFirstItem_shouldOverrideFirstItem() {
-        LruCache<String, BigDecimal> cache = new LruCache<String, BigDecimal>(1);
+        Cache<String, BigDecimal> cache = new LruCache<String, BigDecimal>(1);
         cache.put("Apple", BigDecimal.valueOf(2.5));
 
         cache.put("Microsoft", BigDecimal.valueOf(1.2));
@@ -54,7 +54,7 @@ class LruCacheTest {
 
     @Test
     void givenTwoItemSizeCacheWithOneItem_whenPutFirstItem_shouldAddItem() {
-        LruCache<String, BigDecimal> cache = new LruCache<String, BigDecimal>(2);
+        Cache<String, BigDecimal> cache = new LruCache<String, BigDecimal>(2);
         cache.put("Apple", BigDecimal.valueOf(2.5));
 
         cache.put("Microsoft", BigDecimal.valueOf(1.2));
@@ -65,7 +65,7 @@ class LruCacheTest {
 
     @Test
     void givenTwoItemSizeCacheWithOneItem_whenPutItemWithSameKeyAsFirstItem_shouldOverrideItem() {
-        LruCache<String, BigDecimal> cache = new LruCache<String, BigDecimal>(2);
+        Cache<String, BigDecimal> cache = new LruCache<String, BigDecimal>(2);
         cache.put("Apple", BigDecimal.valueOf(2.5));
 
         cache.put("Apple", BigDecimal.valueOf(10));
@@ -76,7 +76,7 @@ class LruCacheTest {
 
     @Test
     void givenTwoItemSizeCacheWithTwoItems_whenPuFirstItem_shouldOverrideFirstItem() {
-        LruCache<String, BigDecimal> cache = new LruCache<String, BigDecimal>(2);
+        Cache<String, BigDecimal> cache = new LruCache<String, BigDecimal>(2);
         cache.put("Apple", BigDecimal.valueOf(2.5));
         cache.put("Microsoft", BigDecimal.valueOf(1.2));
 
@@ -89,7 +89,7 @@ class LruCacheTest {
 
     @Test
     void givenTwoItemSizeCacheWithTwoItems_whenGeFirstItemAndPuFirstItem_shouldOverrideSecondItem() {
-        LruCache<String, BigDecimal> cache = new LruCache<String, BigDecimal>(2);
+        Cache<String, BigDecimal> cache = new LruCache<String, BigDecimal>(2);
         cache.put("Apple", BigDecimal.valueOf(2.5));
         cache.put("Microsoft", BigDecimal.valueOf(1.2));
 
